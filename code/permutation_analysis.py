@@ -23,7 +23,6 @@ class Permutation(object):
 		self.target = target
 		self.evaluator = evaluator
 		self.verbose = verbose
-		self._completed_tests = 0
 		self.results = []
 
 
@@ -54,8 +53,6 @@ class Permutation(object):
 		## then run the model and save the result.
 		result =  self.evaluator(thisModel, self.features, target)
 		del thisModel
-		if self.verbose: print (self._completed_tests, " completed.")
-		self._completed_tests+=1
 		return result
 
 
