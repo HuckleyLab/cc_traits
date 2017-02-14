@@ -16,13 +16,14 @@ class Permutation(object):
 	test_size -- percentage of dataset to reserve for post-train testing in evaluator function.
 
 	"""
-	def __init__(self, model, features, target, evaluator):
+	def __init__(self, model, features, target, evaluator, verbose=False):
 		super(Permutation, self).__init__()
 		self.model = model
 		self.features = features
 		self.target = target
 		self.evaluator = evaluator
-
+		self.verbose = verbose
+		self._completed_tests = 0
 		self.results = []
 
 
@@ -53,6 +54,8 @@ class Permutation(object):
 		## then run the model and save the result.
 		result =  self.evaluator(thisModel, self.features, target)
 		del thisModel
+		if self.verbose: print (self._completed_tests, " completed.")
+		self._completed_tests+=1
 		return result
 
 

@@ -66,7 +66,7 @@ bestModel = gridSearch.best_estimator_
 def evaluation_function(model, features, target):
 	return -cross_val_score(model, features, target, cv=KFold(5), scoring=SCORING, n_jobs=1).mean()
 
-permTester = Permutation(bestModel, td.X, td.Y, evaluation_function)
+permTester = Permutation(bestModel, td.X, td.Y, evaluation_function, verbose=True)
 
 permTester.execute_test(n_tests=1000, threads=20)
 plot = sns.distplot(permTester.results, rug=True)
