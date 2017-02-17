@@ -1,14 +1,14 @@
 import TraitData
-from sklearn.model_selection import cross_val_score, KFold
-from sklearn.ensemble import RandomForestRegressor
+from pyearth import Earth
+from sklearn.preprocessing import scale
+from sklearn.model_selection import KFold, train_test_split, cross_val_score
 from permutation_analysis import Permutation
 import matplotlib
-matplotlib.use("Agg")
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
-import numpy as np
 sns.set()
-
+import numpy as np
 
 
 datafile = "../data/plants5.csv"
@@ -36,32 +36,20 @@ td = TraitData.TraitData(datafile,
 						 categorical_features, 
 						 dropNA = 1)
 
-X, x_test, Y, y_test = td.train_test_split(0.30)
-
-def importances(weights, features):
-    """
-    sorts features array based on weights.
-    """
-    assert(len(weights) == len(features.columns))
-    sorted_importances = np.argsort(weights)
-    return list(zip(features.columns.values[sorted_importances[::-1]],
-                weights[sorted_importances[::-1]]))
-
 SCORING = "neg_mean_squared_error"
 
-reg = RandomForestRegressor()
+X, x_test, Y, y_test = td.train_test_split(0.30) ## get 30% train test split for gridsearch. 
 
+### Set up MARS model
 
+mars = Earth()
 
-reg.fit(X, Y)
-print(importances(reg.feature_importances_, td.X))
-exit(1)
+## run permutation testing
 
 def evaluation_function(model, features, target):
 	return -cross_val_score(model, features, target, cv=KFold(5), scoring=SCORING, n_jobs=1).mean()
 
-
-permTester = Permutation(reg, td.X, td.Y, evaluation_function, verbose=True)
+permTester = Permutation(mars, td.X, td.Y, evaluation_function, verbose=True)
 
 permTester.execute_test(n_tests=1000, threads=40)
 plot = sns.distplot(permTester.results, rug=True)
@@ -73,4 +61,7 @@ plot = sns.boxplot(permTester.results)
 plot.figure.savefig("permutation_box.png")
 
 print("Benchmark:", permTester.benchmark())
+
+
+
 

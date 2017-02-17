@@ -21,7 +21,7 @@ class TraitData(object):
 		self.encodeFeatures = encodeFeatures
 		self.dropNA  = dropNA
 		self.responseVar = responseVar
-
+		self.feature_names = []
 		self.X, self.Y = self._process_file()
 
 
@@ -45,6 +45,7 @@ class TraitData(object):
 
 	def train_test_split(self, test_size=None):
 		return train_test_split(self.X, self.Y, test_size=test_size)
+
 
 
 
