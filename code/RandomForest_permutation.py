@@ -9,6 +9,7 @@ import seaborn as sns
 import numpy as np
 sns.set()
 
+benchmark_only = False
 
 
 datafile = "../data/plants5.csv"
@@ -53,15 +54,15 @@ reg = RandomForestRegressor()
 
 
 
-reg.fit(X, Y)
-print(importances(reg.feature_importances_, td.X))
-exit(1)
-
 def evaluation_function(model, features, target):
 	return -cross_val_score(model, features, target, cv=KFold(5), scoring=SCORING, n_jobs=1).mean()
 
 
 permTester = Permutation(reg, td.X, td.Y, evaluation_function, verbose=True)
+print("Benchmark:", permTester.benchmark())
+
+if benchmark_only:
+    exit(1)
 
 permTester.execute_test(n_tests=1000, threads=40)
 plot = sns.distplot(permTester.results, rug=True)
@@ -72,5 +73,5 @@ plt.close()
 plot = sns.boxplot(permTester.results)
 plot.figure.savefig("permutation_box.png")
 
-print("Benchmark:", permTester.benchmark())
+
 

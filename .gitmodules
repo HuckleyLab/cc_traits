@@ -1,0 +1,3 @@
+[submodule "code/shap"]
+	path = code/shap
+	url = https://github.com/slundberg/shap.git
