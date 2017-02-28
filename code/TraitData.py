@@ -33,7 +33,8 @@ class TraitData(object):
 
         # extract features
         X = master.drop(self.dropFeatures, axis=1)
-        X.dropna(axis=self.dropNA, inplace=True)
+        if self.dropNA is not None:
+            X.dropna(axis=self.dropNA, inplace=True)
 
         # extract response
         Y = X[self.responseVar]
