@@ -7,8 +7,11 @@ from sklearn.model_selection import KFold
 
 import algos
 
-parser = argparse.ArgumentParser(description="Execute experimentation with "
-                                 "trait-based inference on range shifts.")
+parser = argparse.ArgumentParser(description="""Runs permutation testing on
+                                 various algorithms to elucidate the baseline
+                                 effect of traits on range shift
+                                 predictability. 
+                                 """)
 ## Data Options
 parser.add_argument("traitData", type=str, help="Trait Data CSV File")
 parser.add_argument("responseVar", type=str, help="Response Variable Name")
@@ -45,8 +48,11 @@ if args.na:
 
 ## TODO: traitdata is redundant here--happens in each file. work on this. 
 
-algo_args = (args.traitData, args.responseVar,
-                           args.drop, args.cats, args.na)
+algo_args = (args.traitData,
+             args.responseVar,
+             args.drop,
+             args.cats,
+             args.na)
 
 if "SVR" in args.algo:
     algos.SVR_permutation(*algo_args)
@@ -56,3 +62,6 @@ if "MARS" in args.algo:
 
 if "RF" in args.algo:
     algos.RF_permutation(*algo_args)
+
+if "Linear" in args.algo:
+    raise NotImplementedError("Linear Model Not Yet Implemented.")
