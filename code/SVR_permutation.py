@@ -31,7 +31,7 @@ categorical_features = ["oceanity",
                         "BreedSysCode",
                         "Grime"]
 
-td = TraitData.TraitData(datafile,
+td = TraitData q.TraitData(datafile,
                          responseVar,
                          drop_features,
                          categorical_features,
