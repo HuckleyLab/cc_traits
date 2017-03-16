@@ -1,6 +1,6 @@
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import Imputer
 
 
 class TraitData(object):
@@ -15,7 +15,8 @@ class TraitData(object):
                     dropNA: None does not drop any NA. 1 drops columns with any NAs. 0 drops rows with any NAs.  Default None. 
     """
 
-    def __init__(self, dataFile, responseVar, dropFeatures, encodeFeatures, dropNA=None):
+    def __init__(self, dataFile, responseVar, dropFeatures,
+                 encodeFeatures, dropNA=None):
         super(TraitData, self).__init__()
         self.dataFile = dataFile
         self.dropFeatures = dropFeatures
@@ -40,9 +41,13 @@ class TraitData(object):
         Y = X[self.responseVar]
         X.drop([self.responseVar], inplace=True, axis=1)
 
-        self.feature_names = X.columns
+        self.feature_names = list(X.columns.values)
 
         return X, Y
 
     def train_test_split(self, test_size=None):
         return train_test_split(self.X, self.Y, test_size=test_size)
+
+    def impute_NaN(self):
+        imp = Imputer(missing_values='NaN', strategy='mean')
+        self.X = imp.fit_transform(self.X)
