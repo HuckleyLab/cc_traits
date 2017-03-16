@@ -4,8 +4,11 @@ import argparse
 import numpy as np
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import KFold
-
+import colorama
+from termcolor import colored
 import algos
+
+colorama.init()
 
 parser = argparse.ArgumentParser(description="""Runs permutation testing on
                                  various algorithms to elucidate the baseline
@@ -54,14 +57,18 @@ algo_args = (args.traitData,
              args.cats,
              args.na)
 
+print("Beginning permutation testing...")
 if "SVR" in args.algo:
     algos.SVR_permutation(*algo_args)
+    print(colored("SVR complete.", 'green'))
 
 if "MARS" in args.algo:
     algos.MARS_permutation(*algo_args)
+    print(colored('MARS complete.', 'green'))
 
 if "RF" in args.algo:
     algos.RF_permutation(*algo_args)
+    print(colored("RF complete.", 'green'))
 
 if "Linear" in args.algo:
-    raise NotImplementedError("Linear Model Not Yet Implemented.")
+    print(colored("Linear model not yet supported.", 'red'))
