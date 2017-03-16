@@ -1,6 +1,11 @@
 import TraitData
 from permutation_analysis import Permutation
 import argparse
+import numpy as np
+from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import KFold
+
+import algos
 
 parser = argparse.ArgumentParser(description="Execute experimentation with "
                                  "trait-based inference on range shifts.")
@@ -38,7 +43,16 @@ args = parser.parse_args()
 if args.na:
     args.na = drop_na_enum(args.na) ## convert to number
 
-print(args)
-td = TraitData.TraitData(args.traitData, args.responseVar, args.drop, 
-                         args.cats, args.na)
+## TODO: traitdata is redundant here--happens in each file. work on this. 
 
+algo_args = (args.traitData, args.responseVar,
+                           args.drop, args.cats, args.na)
+
+if "SVR" in args.algo:
+    algos.SVR_permutation(*algo_args)
+
+if "MARS" in args.algo:
+    algos.MARS_permutation(*algo_args)
+
+if "RF" in args.algo:
+    algos.RF_permutation(*algo_args)
