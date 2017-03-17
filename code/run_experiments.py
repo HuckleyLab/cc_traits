@@ -6,9 +6,9 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import KFold
 import colorama
 from termcolor import colored
-from algorithms.SVR_permutation import SVR_permutation
-from algorithms.MARS_permutation import MARS_permutation
-from algorithms.RandomForest_permutation import RF_permutation
+from algorithms.SVR import SVR_permutation
+from algorithms.MARS import MARS_permutation
+from algorithms.RandomForest import RF_permutation
 
 colorama.init()
 
@@ -69,7 +69,7 @@ if "MARS" in args.algo:
     print(colored('MARS complete.', 'green'))
 
 if "RF" in args.algo:
-    RF_permutation(*algo_args)
+    mutation(*algo_args)
     print(colored("RF complete.", 'green'))
 
 if "Linear" in args.algo:
