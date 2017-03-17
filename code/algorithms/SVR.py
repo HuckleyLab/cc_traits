@@ -2,6 +2,7 @@ import TraitData
 from sklearn.preprocessing import scale
 from sklearn.model_selection import KFold, cross_val_score
 from sklearn.model_selection import GridSearchCV
+from sklearn.preprocessing import scale
 from sklearn.svm import SVR
 from permutation_analysis import Permutation
 import matplotlib
@@ -10,6 +11,48 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 sns.set()
+
+
+def evaluation_function(model, features, target):
+    return -cross_val_score(model, features, target,
+                            cv=KFold(5),
+                            scoring='neg_mean_squared_error', n_jobs=1).mean()
+
+
+def SVR_benchmark(datafile, responseVar, drop_features,
+                  categorical_features,
+                  dropNA, SCORING='neg_mean_squared_error', split=0.30,
+                  *algoArgs):
+        td = TraitData.TraitData(datafile,
+                                 responseVar,
+                                 drop_features,
+                                 categorical_features,
+                                 dropNA=dropNA)
+        # get 30% train test split for gridsearch.
+        X, x_test, Y, y_test = td.train_test_split(split)
+
+        # Set up SVR  + do grid search
+
+        base = SVR(*algoArgs)
+
+        params_grid = {
+            'C': np.logspace(-3, 3, 13),
+            'gamma': np.logspace(-3, 3, 13)
+        }
+
+        gridSearch = GridSearchCV(base,
+                                  param_grid=params_grid,
+                                  scoring=SCORING,
+                                  error_score=0,
+                                  n_jobs=-1,
+                                  cv=KFold(5))
+
+        gridSearch.fit(scale(X), Y)
+
+        bestModel = gridSearch.best_estimator_
+        # run permutation testing
+
+        return evaluation_function(bestModel, scale(td.X), td.Y)
 
 
 def evaluation_function(model, features, target):
