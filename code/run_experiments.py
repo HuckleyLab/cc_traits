@@ -6,9 +6,9 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import KFold
 import colorama
 from termcolor import colored
-from algorithms.SVR_permutation import SVR_permutation
-from algorithms.MARS_permutation import MARS_permutation
-from algorithms.RandomForest_permutation import RF_permutation
+from algorithms.SVR import SVR_permutation, SVR_benchmark
+from algorithms.MARS import MARS_permutation, MARS_benchmark
+from algorithms.RandomForest import RF_permutation, RF_benchmark
 
 colorama.init()
 
@@ -25,6 +25,8 @@ parser.add_argument("--cats", type=str, nargs='*', help="Names of "
 parser.add_argument("--drop", type=str, nargs='*',
                     help="Names of variables to remove from analysis.", 
                     required=False)
+parser.add_argument("--benchmark", action="store_true", help="Run benchmark"
+                    "only tests.")
 
 def drop_na_enum(string):
     if string == "feature":
@@ -53,11 +55,25 @@ if args.na:
 
 ## TODO: traitdata is redundant here--happens in each file. work on this. 
 
+
 algo_args = (args.traitData,
              args.responseVar,
              args.drop,
              args.cats,
              args.na)
+
+if args.benchmark:
+    if "SVR" in args.algo:
+        print("SVR Benchmark: ", SVR_benchmark(*algo_args))
+    if "MARS" in args.algo:
+        print("MARS Benchmark: ", MARS_benchmark(*algo_args))
+    if "RF" in args.algo:
+        print("RF Benchmark: ", RF_benchmark(*algo_args))
+    if "Linear" in args.algo:
+        print(colored("Linear benchmarking not supported yet.", 'red'))
+    exit(0)
+
+
 
 print("Beginning permutation testing...")
 if "SVR" in args.algo:
@@ -69,7 +85,7 @@ if "MARS" in args.algo:
     print(colored('MARS complete.', 'green'))
 
 if "RF" in args.algo:
-    RF_permutation(*algo_args)
+    mutation(*algo_args)
     print(colored("RF complete.", 'green'))
 
 if "Linear" in args.algo:

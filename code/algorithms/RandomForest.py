@@ -16,6 +16,20 @@ def evaluation_function(model, features, target):
                             scoring='neg_mean_squared_error', n_jobs=1).mean()
 
 
+def RF_benchmark(datafile, responseVar, drop_features,
+                 categorical_features,
+                 dropNA, SCORING='neg_mean_squared_error', split=0.30,
+                 *algoArgs):
+    td = TraitData.TraitData(datafile, responseVar,
+                             drop_features, categorical_features,
+                             dropNA=dropNA)
+    reg = RandomForestRegressor(*algoArgs)
+
+    return evaluation_function(reg, td.X, td.Y)
+
+
+
+
 def RF_permutation(datafile, responseVar, drop_features,
                    categorical_features,
                    dropNA,
