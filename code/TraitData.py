@@ -1,6 +1,8 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import Imputer
+from sklearn.preprocessing import Imputer, scale
+from numpy import number
+
 
 
 class TraitData(object):
@@ -16,7 +18,7 @@ class TraitData(object):
     """
 
     def __init__(self, dataFile, responseVar, dropFeatures,
-                 encodeFeatures, dropNA=None):
+                 encodeFeatures, dropNA=None, scale=False):
         super(TraitData, self).__init__()
         self.dataFile = dataFile
         self.dropFeatures = dropFeatures
@@ -24,26 +26,40 @@ class TraitData(object):
         self.dropNA = dropNA
         self.responseVar = responseVar
         self.feature_names = []
+        self.scale = scale
         self.X, self.Y = self._process_file()
 
     def _process_file(self):
         master = pd.read_csv(self.dataFile)
+        
         # one-hot encoding
         if len(self.encodeFeatures) > 0:
-            master = pd.get_dummies(master, columns=self.encodeFeatures)
-
-        # extract features
-        X = master.drop(self.dropFeatures, axis=1)
+            try:
+                master = pd.get_dummies(master, columns=self.encodeFeatures)
+            except ValueError:
+                print("Warning: One-hot encoding failed (perhaps columns to encode contained NaN).")
+        
+        # drop features 
+        master = master.drop(self.dropFeatures, axis=1)
+        
+        # Drop NA
         if self.dropNA is not None:
-            X.dropna(axis=self.dropNA, inplace=True)
+            master.dropna(axis=self.dropNA, inplace=True)
+
+        # scale numeric non-encoded features
+        if self.scale:
+            for idx, col in enumerate(master.select_dtypes(include=[number]).columns):
+                if(col.split("_")[0] not in self.encodeFeatures):
+                    master[col] = scale(master[col])
+        
 
         # extract response
-        Y = X[self.responseVar]
-        X.drop([self.responseVar], inplace=True, axis=1)
+        Y = master[self.responseVar]
+        master.drop([self.responseVar], inplace=True, axis=1)
 
-        self.feature_names = list(X.columns.values)
+        self.feature_names = list(master.columns.values)
 
-        return X, Y
+        return master, Y
 
     def train_test_split(self, test_size=None):
         return train_test_split(self.X, self.Y, test_size=test_size)
