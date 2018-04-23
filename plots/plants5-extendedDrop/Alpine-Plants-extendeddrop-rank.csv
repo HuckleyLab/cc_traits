@@ -1,38 +1,39 @@
 ,OLS,Ridge,Kernel Ridge,Kernel Ridge,RF,SVR,mean
-StorageOrgan,12,14,21,21,24,27,19.833333333333332
-ReprModeCode,6,30,24,24,14,4,17.0
-flwr_mo_start,25,27,14,14,13,31,20.666666666666668
-flwr_mo_end,23,26,4,4,11,36,17.333333333333332
-flwr_dur_mos,31,24,3,3,7,16,14.0
-earliest_seed_shed_mo,13,0,12,12,0,1,6.333333333333333
-latest_seed_shed_mo,24,5,1,1,8,0,6.5
-seed_shed_dur_mos,14,19,5,5,3,7,8.833333333333334
-SI01,19,12,6,6,28,2,12.166666666666666
-seed_mass_mg,3,21,13,13,6,18,12.333333333333334
-diaspore_mass_mg,32,25,35,35,17,26,28.333333333333332
-diaspore_min_len_mm,9,3,16,16,2,19,10.833333333333334
-diaspore_max_len_mm,8,11,31,31,10,13,17.333333333333332
-diaspore_ave_len_mm,11,9,17,17,25,20,16.5
-Min_seed_shed_ht_m,7,4,0,0,12,8,5.166666666666667
-Max_seed_shed_ht_m,18,33,19,19,21,17,21.166666666666668
-Ave_seed_shed_ht_m,28,23,10,10,4,15,15.0
-nichebreadth_num_flor_zones,1,1,22,22,1,14,10.166666666666666
-nichebreadth_amplit_ocean,21,16,8,8,18,3,12.333333333333334
-Nbound_lat_GBIF_nosyn,26,15,2,2,16,6,11.166666666666666
-GenTime,22,13,9,9,22,12,14.5
-Resil,34,36,25,25,26,29,29.166666666666668
-MaxAlt,4,31,27,27,5,23,19.5
-oceanity_ks,35,35,30,30,27,22,29.833333333333332
-oceanity_o,20,20,34,34,23,9,23.333333333333332
-oceanity_os,16,10,32,32,15,11,19.333333333333332
-oceanity_sks,5,29,28,28,29,32,25.166666666666668
-oceanity_so,17,7,29,29,30,28,23.333333333333332
-oceanity_sos,30,28,36,36,31,30,31.833333333333332
-dispersal_mode_animal,15,18,7,7,32,35,19.0
-dispersal_mode_gravity,10,8,15,15,33,21,17.0
-dispersal_mode_water,36,34,26,26,34,24,30.0
-dispersal_mode_wind,33,22,20,20,20,10,20.833333333333332
-BreedSysCode_1.0,27,32,33,33,19,25,28.166666666666668
-BreedSysCode_2.0,0,6,18,18,35,33,18.333333333333332
-BreedSysCode_3.0,2,2,11,11,9,5,6.666666666666667
-BreedSysCode_4.0,29,17,23,23,36,34,27.0
+Storage Organ Presence,12,13,19,19,27,9,16.5
+ReprModeCode,7,24,17,17,12,2,13.166666666666666
+Flowering Start (month),26,33,13,13,3,24,18.666666666666668
+Flowering End (month),22,30,2,2,23,8,14.5
+Flowering Duration (months),32,31,3,3,16,22,17.833333333333332
+Seed Shed Month (earliest),13,0,15,15,0,0,7.166666666666667
+Seed Shed Month (latest),25,3,1,1,5,23,9.666666666666666
+Seed Shed Duration (months),15,23,4,4,7,12,10.833333333333334
+Seed Mass (mg),3,17,11,11,11,32,14.166666666666666
+Diaspore Mass (mg),31,32,23,23,21,34,27.333333333333332
+Diaspore Minimum Length (mm),10,4,18,18,6,15,11.833333333333334
+Diaspore Maximum Length (mm),8,10,35,35,10,7,17.5
+Average Diaspore Length (mm),11,8,29,29,8,10,15.833333333333334
+Minimum Seed Shed Height (m),6,5,0,0,22,4,6.166666666666667
+Maximum Seed Shed Height (m),18,28,25,25,4,13,18.833333333333332
+Average Seed Shed Height (M),28,26,9,9,2,21,15.833333333333334
+Total Number of Floristic Zones,2,1,24,24,1,33,14.166666666666666
+Total Number of Oceanic Zones,21,22,8,8,25,6,15.0
+Nbound_lat_GBIF_nosyn,27,15,5,5,17,25,15.666666666666666
+GenTime,20,20,7,7,19,27,16.666666666666668
+Resil,35,35,32,32,32,17,30.5
+Maximum Altitude,4,29,22,22,18,1,16.0
+Oceanity: Continental - Oceanic,36,36,28,28,33,35,32.666666666666664
+Oceanity: Oceanic,17,16,33,33,20,37,26.0
+Oceanity: Oceanic - Continental,14,11,26,26,34,28,23.166666666666668
+Oceanity: Moderate Continental,5,25,37,37,35,29,28.0
+Oceanity: Moderate Both,24,6,21,21,9,18,16.5
+Oceanity: Moderate Oceanic,30,34,27,27,28,16,27.0
+Animal Dispersal Mode (binary),16,12,6,6,36,36,18.666666666666668
+Gravity Dispersal Mode (binary),9,7,10,10,26,3,10.833333333333334
+Water Dispersal Mode (binary),37,37,34,34,37,31,35.0
+Wind Dispersal Mode (binary),29,21,12,12,29,5,18.0
+Breeding: Obligate Outcrossing,33,27,36,36,30,26,31.333333333333332
+"Breeding: Mostly Outcrossing, Selfing Possible",0,9,20,20,13,30,15.333333333333334
+Breeding: Mixed Mating I ,1,2,14,14,24,14,11.5
+Breeding: Mixed Mating II,34,14,16,16,15,19,19.0
+Self Compatibility: Yes,19,19,30,30,31,11,23.333333333333332
+Self Compatibility: No,23,18,31,31,14,20,22.833333333333332
