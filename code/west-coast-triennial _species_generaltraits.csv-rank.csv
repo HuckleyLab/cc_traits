@@ -1,0 +1,26 @@
+,OLS,Ridge,Kernel Ridge,Kernel Ridge,RF,SVR,mean
+DepthRangeDeep,15,7,0,0,2,5,4.833333333333333
+Vulnerability,23,11,1,1,1,2,6.5
+Length,18,19,3,3,3,4,8.333333333333334
+UsedforAquaculture_commercial,8,15,21,21,14,8,14.5
+UsedforAquaculture_likely future use,17,21,23,23,22,12,19.666666666666668
+UsedforAquaculture_never/rarely,16,13,16,16,13,10,14.0
+Electrogenic_Electrosensing only,0,0,5,5,0,9,3.1666666666666665
+Electrogenic_electrosensing only,9,18,8,8,18,3,10.666666666666666
+Electrogenic_no special ability,7,12,15,15,20,6,12.5
+Electrogenic_strongly discharging,1,4,22,22,21,20,15.0
+Electrogenic_weakly discharging,2,1,2,2,4,14,4.166666666666667
+DemersPelag_bathydemersal,22,20,9,9,11,1,12.0
+DemersPelag_benthopelagic,24,5,4,4,16,24,12.833333333333334
+DemersPelag_demersal,11,8,7,7,8,0,6.833333333333333
+DemersPelag_pelagic-neritic,13,9,11,11,5,19,11.333333333333334
+DemersPelag_pelagic-oceanic,5,14,14,14,23,21,15.166666666666666
+DemersPelag_reef-associated,3,3,10,10,6,22,9.0
+LTypeMaxM_FL,6,6,12,12,19,18,12.166666666666666
+LTypeMaxM_SL,4,2,6,6,7,11,6.0
+LTypeMaxM_TL,19,10,13,13,15,13,13.833333333333334
+Fresh_-1,14,17,19,19,10,16,15.833333333333334
+Fresh_0,20,16,17,17,17,23,18.333333333333332
+Brack_-1,21,22,20,20,9,15,17.833333333333332
+Brack_0,12,23,18,18,12,17,16.666666666666668
+Saltwater_-1,10,24,24,24,24,7,18.833333333333332
