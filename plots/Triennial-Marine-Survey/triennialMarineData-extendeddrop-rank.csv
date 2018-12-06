@@ -1,0 +1,18 @@
+,OLS,Ridge,Kernel Ridge,Kernel Ridge,RF,SVR,mean
+DepthRangeDeep,8,3,0,0,0,15,4.333333333333333
+Vulnerability,15,5,1,1,2,14,6.333333333333333
+Length,13,12,2,2,1,2,5.333333333333333
+UsedforAquaculture_commercial,4,8,11,11,12,10,9.333333333333334
+UsedforAquaculture_likely future use,7,13,12,12,14,1,9.833333333333334
+UsedforAquaculture_never/rarely,5,7,13,13,13,9,10.0
+DemersPelag_bathydemersal,12,11,6,6,5,16,9.333333333333334
+DemersPelag_benthopelagic,1,1,3,3,4,13,4.166666666666667
+DemersPelag_demersal,11,4,9,9,8,8,8.166666666666666
+DemersPelag_pelagic-neritic,3,2,5,5,3,3,3.5
+DemersPelag_pelagic-oceanic,2,6,7,7,15,7,7.333333333333333
+DemersPelag_reef-associated,0,0,4,4,6,0,2.3333333333333335
+Fresh_-1,9,10,8,8,9,4,8.0
+Fresh_0,6,9,15,15,11,6,10.333333333333334
+Brack_-1,16,14,14,14,7,5,11.666666666666666
+Brack_0,14,15,16,16,10,11,13.666666666666666
+Saltwater_-1,10,16,10,10,16,12,12.333333333333334
