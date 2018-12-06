@@ -1,0 +1,39 @@
+,OLS,Ridge,Kernel Ridge,Kernel Ridge,RF,SVR,mean
+Storage Organ Presence,12,13,19,19,27,9,16.5
+ReprModeCode,7,24,17,17,12,2,13.166666666666666
+Flowering Start (month),26,33,13,13,3,24,18.666666666666668
+Flowering End (month),22,30,2,2,23,8,14.5
+Flowering Duration (months),32,31,3,3,16,22,17.833333333333332
+Seed Shed Month (earliest),13,0,15,15,0,0,7.166666666666667
+Seed Shed Month (latest),25,3,1,1,5,23,9.666666666666666
+Seed Shed Duration (months),15,23,4,4,7,12,10.833333333333334
+Seed Mass (mg),3,17,11,11,11,32,14.166666666666666
+Diaspore Mass (mg),31,32,23,23,21,34,27.333333333333332
+Diaspore Minimum Length (mm),10,4,18,18,6,15,11.833333333333334
+Diaspore Maximum Length (mm),8,10,35,35,10,7,17.5
+Average Diaspore Length (mm),11,8,29,29,8,10,15.833333333333334
+Minimum Seed Shed Height (m),6,5,0,0,22,4,6.166666666666667
+Maximum Seed Shed Height (m),18,28,25,25,4,13,18.833333333333332
+Average Seed Shed Height (M),28,26,9,9,2,21,15.833333333333334
+Total Number of Floristic Zones,2,1,24,24,1,33,14.166666666666666
+Total Number of Oceanic Zones,21,22,8,8,25,6,15.0
+Nbound_lat_GBIF_nosyn,27,15,5,5,17,25,15.666666666666666
+GenTime,20,20,7,7,19,27,16.666666666666668
+Resil,35,35,32,32,32,17,30.5
+Maximum Altitude,4,29,22,22,18,1,16.0
+Oceanity: Continental - Oceanic,36,36,28,28,33,35,32.666666666666664
+Oceanity: Oceanic,17,16,33,33,20,37,26.0
+Oceanity: Oceanic - Continental,14,11,26,26,34,28,23.166666666666668
+Oceanity: Moderate Continental,5,25,37,37,35,29,28.0
+Oceanity: Moderate Both,24,6,21,21,9,18,16.5
+Oceanity: Moderate Oceanic,30,34,27,27,28,16,27.0
+Animal Dispersal Mode (binary),16,12,6,6,36,36,18.666666666666668
+Gravity Dispersal Mode (binary),9,7,10,10,26,3,10.833333333333334
+Water Dispersal Mode (binary),37,37,34,34,37,31,35.0
+Wind Dispersal Mode (binary),29,21,12,12,29,5,18.0
+Breeding: Obligate Outcrossing,33,27,36,36,30,26,31.333333333333332
+"Breeding: Mostly Outcrossing, Selfing Possible",0,9,20,20,13,30,15.333333333333334
+Breeding: Mixed Mating I ,1,2,14,14,24,14,11.5
+Breeding: Mixed Mating II,34,14,16,16,15,19,19.0
+Self Compatibility: Yes,19,19,30,30,31,11,23.333333333333332
+Self Compatibility: No,23,18,31,31,14,20,22.833333333333332
