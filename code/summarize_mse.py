@@ -6,8 +6,26 @@ from glob import glob
 from ast import literal_eval
 import numpy as np
 
+"""
+summarize_mse.py | tony cannistra 2018 (tonycan@uw.edu)
+for "Enhancing the Power of Traits..."
+
+Intended to be run post-analysis to summarize mean mean_squared_error
+values across all datasets for each model type. answers the question:
+"how does model X compare to model Y in MSE across all datasets"
+
+Usage:
+    python3 summarize_mse.py <JSON data specification file>
+                             <results root directory>
+                             <optional: dataset name>
+
+"""
 
 def get_dataset_mses(dsname, rootdir):
+    """
+        finds MSE data for single dataset
+        by looking for ./rootdir/dsname/*.mses.csv
+    """
     datapath = path.join(rootdir, dsname.replace(" ", "-"))
     print("searching: {}".format(path.join(datapath, "*.mses.csv")))
 
@@ -16,6 +34,11 @@ def get_dataset_mses(dsname, rootdir):
 
 
 def improvement(mses, over = 'OLS'):
+    """
+        computes percent improvement in MSE for all methods
+        in mses (a dataframe with 'method' and 'MSEs' columns)
+        over method <over>
+    """
     OLS = np.mean(mses.MSEs[mses.method == over].iloc[0])
     improvement_raw = np.array([np.mean(x) for x in mses.MSEs.values]) - OLS
 
@@ -29,12 +52,12 @@ def improvement(mses, over = 'OLS'):
 
 def main():
     # load dataset info
-    dsinfo = json.load(open(argv[1]))
+    dsinfo = json.load(open(argv[1])) # argv[1] = json specification file
+
     print("found datasets: {}".format(
         ", ".join([d['name'].replace(" ", "-") for d in dsinfo])))
 
-
-    # just one dataset?
+    # just one dataset? (argv[3] does not exist)
     dsname = None
     try:
         dsname = argv[3]
@@ -47,7 +70,7 @@ def main():
     files = []
     for ds in dsinfo:
         if dsname != None and ds['name'] != dsname:
-            # skip all that aren't focal ds
+            # skip all that aren't focal ds if one exists
             continue;
         try:
             files.append(get_dataset_mses(ds['name'], argv[2]))
