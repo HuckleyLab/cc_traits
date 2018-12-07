@@ -16,9 +16,9 @@ DemersPelag_demersal,ecological ,Demersal
 DemersPelag_pelagic-neritic,ecological ,Pelagic-Neritic
 DemersPelag_pelagic-oceanic,ecological ,Pelagic-Oceanic
 DemersPelag_reef-associated,ecological ,Reef-Associated
-LTypeMaxM_FL,,
-LTypeMaxM_SL,,
-LTypeMaxM_TL,,
+LTypeMaxM_FL,Physical ,Length Type ?
+LTypeMaxM_SL,Physical ,Length Type ?
+LTypeMaxM_TL,Physical ,Length Type ?
 Fresh_-1,ecological,Freshwater: Present
 Fresh_0,ecological,Freshwater: Not Present
 Brack_-1,ecological,Brackish: Present

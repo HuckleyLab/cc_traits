@@ -5,8 +5,8 @@ Litters_per_yr,reproductive,Litters / year
 Young_per_yr,reproductive,Young / year
 Mass_g,physical,Mass (g)
 Longevity_yrs,physical,Longevity (years)
-Bio1_mean,climatic,
-Bio1_std,climatic,
+Bio1_mean,climatic,BioClim: Bio 1 (mean)
+Bio1_std,climatic,BioClim: Bio 1 (std dev)
 Rangesize_km2,ecological,Range Size (km2)
 Food_code,ecological,
 Daily01_0,,

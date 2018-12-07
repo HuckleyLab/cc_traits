@@ -3,9 +3,12 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - pandas
   - python=3.5.4
-  - scikit-learn
+  - scikit-learn=0.18.0
   - seaborn
   - scipy
-  - pip:
-      - shap
+  #- pip:
+  #    - shap
+  # The above doesn't work because we need a previous, non PyPi
+  # version of shap (the API has changed – we need commit 021e57c1a944149925976bf3977f374b4f8c7941 from github/slundberg/shap). For Binder we do this in a postBuild file. 
