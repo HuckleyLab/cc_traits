@@ -1,0 +1,28 @@
+name,type,description
+DepthRangeDeep,ecological ,Depth
+Vulnerability,ecological ,FishBase Vulnerability
+Length,physical ,Length
+UsedforAquaculture_commercial,economic,Aquaculture: Commercial Species
+UsedforAquaculture_likely future use,economic,Aquaculture: Future Likely
+UsedforAquaculture_never/rarely,economic,Aquaculture: Never/Rarely
+Electrogenic_Electrosensing only,physical ,
+Electrogenic_electrosensing only,physical ,
+Electrogenic_no special ability,physical ,
+Electrogenic_strongly discharging,physical ,
+Electrogenic_weakly discharging,physical ,
+DemersPelag_bathydemersal,ecological ,Bathydemersal
+DemersPelag_benthopelagic,ecological ,Benthopelagic
+DemersPelag_demersal,ecological ,Demersal
+DemersPelag_pelagic-neritic,ecological ,Pelagic-Neritic
+DemersPelag_pelagic-oceanic,ecological ,Pelagic-Oceanic
+DemersPelag_reef-associated,ecological ,Reef-Associated
+LTypeMaxM_FL,,
+LTypeMaxM_SL,,
+LTypeMaxM_TL,,
+Fresh_-1,ecological,Freshwater: Present
+Fresh_0,ecological,Freshwater: Not Present
+Brack_-1,ecological,Brackish: Present
+Brack_0,ecological,Brackish: Not Present
+Saltwater_-1,ecological,Saltwater: Present
+??: Velocity of Climate Change,,
+Food? chris brown categorical ,,

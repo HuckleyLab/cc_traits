@@ -1,0 +1,27 @@
+name,type,description
+Orig_high_limit,ecological,Altitudinal Limit
+Litter_size,reproductive,Litter Size (individuals)
+Litters_per_yr,reproductive,Litters / year
+Young_per_yr,reproductive,Young / year
+Mass_g,physical,Mass (g)
+Longevity_yrs,physical,Longevity (years)
+Bio1_mean,climatic,
+Bio1_std,climatic,
+Rangesize_km2,ecological,Range Size (km2)
+Food_code,ecological,
+Daily01_0,,
+Daily01_1,,
+Annual01_0,,
+Annual01_1,,
+Food01_0,,
+Food01_1,,
+Daily_rhythm_both,physical,Rhythm: Diurnal + Nocturnal (binary)
+Daily_rhythm_diur,physical,Rhythm: Diurnal (binary)
+Daily_rhythm_noct,physical,Rhythm: Nocturnal (binary)
+Annual_rhythm_fachib,physical,Facultative Hibernation (binary) 
+Annual_rhythm_nonhib,physical,No Hibernation (binary)
+Annual_rhythm_oblhib,physical,Obligate Hibernation (binary)
+Food_gran,ecological,Granivore (binary) ??
+Food_herb,ecological,Herivore (binary)
+Food_inse,ecological,Insectivore (binary)
+Food_omni,ecological,Omnivore (binary)
