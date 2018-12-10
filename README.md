@@ -15,8 +15,8 @@ Accurately predicting species’ range shifts in response to environmental chang
 ## Repository Structure [![Binder](https://mybinder.org/badge_logo.svg)](#FINISHTHIS)
 
 
-**`/code`**: this folder contains all of the code required to run the analysis, the form of Python Jupyter Notebooks. This repository is Binder-enabled. Click the badge above or in [`code/README.md`](code/README.md) to launch an interactive Jupyter session to run the analysis in your browser.
+**[`code/`](./code)**: this folder contains all of the code required to run the analysis, the form of Python Jupyter Notebooks. This repository is Binder-enabled. Click the badge above or in [`code/README.md`](code/README.md) to launch an interactive Jupyter session to run the analysis in your browser.
 
-**`/plots`**: contains final figures contained within the manuscript.
+**[`plots/`](./plots)**: contains final figures contained within the manuscript.
 
-**`/data`**: contains the data used to perform this analysis. Citations can be found in the manuscript. 
+**[`data/`](./plots)**: contains the data used to perform this analysis. Citations can be found in the manuscript. 
