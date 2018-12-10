@@ -19,4 +19,4 @@ Accurately predicting species’ range shifts in response to environmental chang
 
 **[`plots/`](./plots)**: contains final figures contained within the manuscript.
 
-**[`data/`](./plots)**: contains the data used to perform this analysis. Citations can be found in the manuscript. 
+**[`data/`](./data)**: contains the data used to perform this analysis. Citations can be found in the manuscript.
