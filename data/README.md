@@ -7,7 +7,7 @@ Four datasets were used in this analysis, as follows:
 [rumpf18]: http://www.pnas.org/content/115/8/1848
 
 * **Swiss Alpine Plants** (*from [Angert et al, 2011][angert11]*): historic elevational range shifts of alpine plant species.
-* **European Plants** (*from [Rumpf et al, 2017][rumpf18]*): historic elevational range shifts of european plant species.
+* **European Plants** (*from [Rumpf et al, 2018][rumpf18]*): historic elevational range shifts of european plant species.
 * **Marine Fish** (*from [Pinsky et al, 2013][pinsky13]*): historic latitudinal range shifts of marine fishes.
 * **Western North American Mammals** (*from [Angert et al, 2011][angert11]*): historic elevational range shifts of small mammals in Yosemite National Park, CA, USA.
 
