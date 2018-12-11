@@ -20,3 +20,23 @@ Accurately predicting species’ range shifts in response to environmental chang
 **[`plots/`](./plots)**: contains final figures contained within the manuscript.
 
 **[`data/`](./data)**: contains the data used to perform this analysis. Citations can be found in the manuscript.
+
+## Analysis Workflow
+
+After cloning this repository, the reproduction of the analysis for this publication is encapsulated into three primary steps.
+
+1. **Perform Main Analysis for Each Dataset**: all analytical steps are encapsulated into `./code/0-Nonlinear-Trait-Modeling.ipynb`. They include:
+   * Loading and pre-processing trait data.
+   * Running OLS model.
+   * Running all non-linear models.
+   * Evaluating trait drivers of model predictions.
+   * Producing plots of coefficients or Shapley values.
+   * Producing MSE plots + boxplots.
+
+   The `0-Nonlinear-Trait-Modeling.ipynb` notebook must be run once per dataset. See the documentation in the notebook for a description.
+
+2. **Produce Summary Coefficient Plots**: after running all datasets through the `0-Nonlinear-Trait-Modeling.ipynb` notebook, the `1-Coefficient-Summary-Plots.ipynb` notebook can be used to produce summary plots comparing the values of the top 10 ranked traits for across datasets and models. The notebook describes this process.
+
+3. **Summarize Performance Improvement**: finally, to compute figures describing the improvement (in MSE) of non-linear methods over the OLS baseline, we use the `./code/summarize_mse.py` code. See the code for documentation.
+
+***Note**: many of the plots in the manuscript have been re-arranged, re-labeled, or otherwise modified from their raw state in graphic design tools to be suitable for publication*.
