@@ -33,14 +33,21 @@ def get_dataset_mses(dsname, rootdir):
     return(pd.read_csv(datafile, converters={'MSEs': literal_eval}))
 
 
-def improvement(mses, over = 'OLS'):
+def improvement(mses, over = 'OLS', how = 'mean'):
     """
         computes percent improvement in MSE for all methods
         in mses (a dataframe with 'method' and 'MSEs' columns)
         over method <over>
+
+        how: 'mean' to compare means across Methods
+             'median' to compare medians across methods
     """
-    OLS = np.mean(mses.MSEs[mses.method == over].iloc[0])
-    improvement_raw = np.array([np.mean(x) for x in mses.MSEs.values]) - OLS
+    comparator = np.mean
+    if how == 'median':
+        comparator = np.median
+
+    OLS = comparator(mses.MSEs[mses.method == over].iloc[0])
+    improvement_raw = np.array([comparator(x) for x in mses.MSEs.values]) - OLS
 
     improvement_pct = np.divide(improvement_raw, OLS) * 100
 
@@ -59,11 +66,26 @@ def main():
 
     # just one dataset? (argv[3] does not exist)
     dsname = None
+    comparator = 'mean'
     try:
-        dsname = argv[3]
+        thirdArg = argv[3]
+        if (thirdArg not in ['mean', 'median']):
+            dsname = thirdArg
+            print('dsname')
+        else:
+            comparator = argv[3]
+            raise Exception()
+
         print("using dataset \"{}\"".format(dsname))
     except:
         print("using all datasets")
+
+    # mean or median?
+    try:
+        comparator = argv[4]
+    except:
+        pass
+
 
     # look for dataset mses files
 
@@ -82,7 +104,7 @@ def main():
     improvements = []
     for file in files:
         try:
-            improvements.append(improvement(file))
+            improvements.append(improvement(file, how = comparator))
         except:
             continue
     improvements = pd.concat(improvements)
