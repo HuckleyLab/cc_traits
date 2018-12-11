@@ -1,5 +1,5 @@
 # Trait Drivers of Geographic Range Shifts
-[Tony Cannistra](http://www.anthonycannistra.com) and the [Buckley Lab](http://faculty.washington.edu/lbuckley) at the University of Washington Department of Biology.
+[Tony Cannistra](http://www.anthonycannistra.com) and [Lauren Buckley](http://faculty.washington.edu/lbuckley) at the University of Washington Department of Biology.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](#FINISHTHIS)
 
