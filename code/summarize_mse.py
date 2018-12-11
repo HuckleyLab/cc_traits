@@ -17,7 +17,9 @@ values across all datasets for each model type. answers the question:
 Usage:
     python3 summarize_mse.py <JSON data specification file>
                              <results root directory>
-                             <optional: dataset name>
+                             <optional: dataset name - just look at one>
+                             <optional: 'mean' or 'median' for combination
+                             (default = 'mean')>
 
 """
 
@@ -27,9 +29,11 @@ def get_dataset_mses(dsname, rootdir):
         by looking for ./rootdir/dsname/*.mses.csv
     """
     datapath = path.join(rootdir, dsname.replace(" ", "-"))
-    print("searching: {}".format(path.join(datapath, "*.mses.csv")))
+    print("searching: {}".format(path.join(datapath, "*mseraw.csv")))
+
 
     datafile = glob(path.join(datapath, "*mseraw.csv"))[0]
+    print(datafile)
     return(pd.read_csv(datafile, converters={'MSEs': literal_eval}))
 
 
@@ -71,7 +75,6 @@ def main():
         thirdArg = argv[3]
         if (thirdArg not in ['mean', 'median']):
             dsname = thirdArg
-            print('dsname')
         else:
             comparator = argv[3]
             raise Exception()
@@ -105,7 +108,8 @@ def main():
     for file in files:
         try:
             improvements.append(improvement(file, how = comparator))
-        except:
+        except Exception as e:
+            print(e)
             continue
     improvements = pd.concat(improvements)
 
