@@ -1,16 +1,42 @@
-# Trait Drivers of Geographic Range Shifts 
-[Tony Cannistra](http://www.anthonycannistra.com) and the [Buckley Lab](http://faculty.washington.edu/lbuckley) at the University of Washington Department of Biology. 
+# Improving range shift predictions: enhancing the power of traits
+[Tony Cannistra](http://www.anthonycannistra.com) and [Lauren Buckley](http://faculty.washington.edu/lbuckley) at the University of Washington Department of Biology.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](#FINISHTHIS)
+
 
 [angert]: http://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2011.01620.x/full
 
-__Problem Statement:__ We have a data set consisting of trait values and historic range shifts for several taxonomies. An [original paper][angert] attempted to examine the influence of these trait values on range shifts using linear modeling, but was largely unsuccessful. The challenge is to develop a method for understanding the interactions between these trait variables and the response variable of range shift. 
+**Question**: Can nonlinear methods improve the predictive value of species' traits with regard to climate-driven range shifts?
 
-__Research Methods Abstract__: Here we address a pressing need, both in theoretical functional ecology and in more applied pursuits, to enhance the power of functional trait data to elucidate drivers of climate-induced geographic range shifts across multiple taxonomic groups. Previous studies attempting to evaluate relationships between traits and range shifts have relied upon linear mixed modeling to assess hypothetical driving relationships. Acknowledging that many geographic range shift responses to trait values are nonlinear in nature, we develop a method which uses nonlinear predictive modeling methods from machine learning to extract more nuanced patterns in trait values to be used in prediction of geographic range shifts. We consider several prediction methods including random forests, support vector regression, and neural networks in pursuit of this goal. Our evaluation framework leverages permutation testing and cross-validation to assess prediction errors on actual historic range shift data. 
+## Abstract
 
-__Methods__:
+Accurately predicting species’ range shifts in response to environmental change is a central ecological objective and applied imperative. Species’ functional traits are powerful predictors of responses in detailed studies and have thus been extensively incorporated in predictive frameworks such as vulnerability analyses.  In synthetic analyses, traits emerge as significant but weak predictors of species’ range shifts across recent climate change. These studies assume linearity in the relationship between a trait and its function, while detailed empirical work often reveals unimodal relationships, thresholds, and other nonlinearities in many trait-function relationships. We hypothesize that the use of linear modeling approaches fails to capture these nonlinearities and therefore may be under-powering traits to predict range shifts. We evaluate the predictive performance of four different machine learning approaches that can capture nonlinear relationships (ridge-regularized linear regression, ridge-regularized kernel regression, support vector regression, and random forests). We validate our models using four multi-decadal range shift datasets in montane plants, montane small mammals, and marine fish. We show that nonlinear approaches perform substantially better than least-squares linear modeling in reproducing historical range shifts. In addition, using novel model observation and interrogation techniques, we identify trait classes (e.g. dispersal- or diet-related traits) that are primary drivers of model predictions, which is consistent with expectation. However, disagreements among models in the directionality of trait predictors suggests limits to trait-based statistical predictive frameworks. Our results highlight that non-linear approaches promise substantially improved, but potentially still limited, capacity to leverage species traits to predict climate change responses in contexts such as species vulnerability analyses.
 
-* We use Python to implement several nonlinear regression approaches. 
-* We use cross-validation to assess average mean squared error by partitioning our data into training and testing sets and evaluating performance. 
-* We use perturbation testing on the input to create a null distribution of random effects in these models. 
-* We use the null distribution of these errors to assess algorithm performance. 
-* We utilize variable importance measures to assess effect sizes in our predictions, which have the potential to hone feature selection in future geographic range shift modeling approaches. 
+## Repository Structure [![Binder](https://mybinder.org/badge_logo.svg)](#FINISHTHIS)
+
+
+**[`code/`](./code)**: this folder contains all of the code required to run the analysis, the form of Python Jupyter Notebooks. This repository is Binder-enabled. Click the badge above or in [`code/README.md`](code/README.md) to launch an interactive Jupyter session to run the analysis in your browser.
+
+**[`plots/`](./plots)**: contains final figures contained within the manuscript.
+
+**[`data/`](./data)**: contains the data used to perform this analysis. Citations can be found in the manuscript.
+
+## Analysis Workflow
+
+After cloning this repository, the reproduction of the analysis for this publication is encapsulated into three primary steps.
+
+1. **Perform Main Analysis for Each Dataset**: all analytical steps are encapsulated into `./code/0-Nonlinear-Trait-Modeling.ipynb`. They include:
+   * Loading and pre-processing trait data.
+   * Running OLS model.
+   * Running all non-linear models.
+   * Evaluating trait drivers of model predictions.
+   * Producing plots of coefficients or Shapley values.
+   * Producing MSE plots + boxplots.
+
+   The `0-Nonlinear-Trait-Modeling.ipynb` notebook must be run once per dataset. See the documentation in the notebook for a description.
+
+2. **Produce Summary Coefficient Plots**: after running all datasets through the `0-Nonlinear-Trait-Modeling.ipynb` notebook, the `1-Coefficient-Summary-Plots.ipynb` notebook can be used to produce summary plots comparing the values of the top 10 ranked traits for across datasets and models. The notebook describes this process.
+
+3. **Summarize Performance Improvement**: finally, to compute figures describing the improvement (in MSE) of non-linear methods over the OLS baseline, we use the `./code/summarize_mse.py` code. See the code for documentation.
+
+***Note**: many of the plots in the manuscript have been re-arranged, re-labeled, or otherwise modified from their raw state in graphic design tools to be suitable for publication*.
