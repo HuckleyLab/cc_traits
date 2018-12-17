@@ -9,9 +9,9 @@ The code to produce the analyses in this report is documented in two Jupyter not
 
 There are also two supporting files.
 
-* `TraitData.py`, which is a supporting module for reading and processing the trait data files. See file for documentation. 
+* `TraitData.py`, which is a supporting module for reading and processing the trait data files. See file for documentation.
 * `summarize_mse.py`: compares mean model MSE performance across datasets to produce average performance improvement statistics. See file for documentation.
 
 This code runs live in a browser using Binder. Click the badge below to start an interactive Jupyter session and run the notebooks.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](#FINISHTHIS)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/HuckleyLab/cc_traits/master)
