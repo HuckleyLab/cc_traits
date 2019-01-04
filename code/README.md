@@ -16,4 +16,5 @@ This code runs live in a browser using Binder. Click the badge below to start an
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/HuckleyLab/cc_traits/master)
 
-<img align="center" src="../huckleylab_footer.png">
+---
+<img align="center" src="../huckleylab-footer.png">
