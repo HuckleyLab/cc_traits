@@ -15,3 +15,5 @@ There are also two supporting files.
 This code runs live in a browser using Binder. Click the badge below to start an interactive Jupyter session and run the notebooks.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/HuckleyLab/cc_traits/master)
+
+<img align="right" src="https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/98/2014/09/07214238/W-Logo_Purple_RGB.png" height=50>

@@ -1,5 +1,3 @@
-# Data
-
 Four datasets were used in this analysis, as follows:
 
 [angert11]: http://doi.wiley.com/10.1111/j.1461-0248.2011.01620.x
@@ -16,3 +14,5 @@ Four datasets were used in this analysis, as follows:
 **Data Sources**: All datasets except for **Marine Fish** had traits already incorporated in them from their original publications. Our marine dataset merges [Pinsky's][pinsky13] original range shift data with [FishBase](http://www.fishbase.org) trait data. This merger is performed in `/code/R/trawl-shifts.R`.
 
 **Trait Descriptions**: Within each dataset folder find a `traits-desc-{dataset-name}.csv` file, which gives English trait descriptions to variable names where available. These `traits-desc` files are used in plotting (see `/code/0-Nonlinear-Trait-Modeling.ipynb`).
+
+<img align="right" src="https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/98/2014/09/07214238/W-Logo_Purple_RGB.png" height=50>

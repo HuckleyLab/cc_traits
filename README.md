@@ -2,6 +2,8 @@
 
 [Tony Cannistra](http://www.anthonycannistra.com) and [Lauren Buckley](http://faculty.washington.edu/lbuckley) at the University of Washington Department of Biology.
 
+
+
 </div>
 
 
@@ -42,4 +44,6 @@ After cloning this repository, the reproduction of the analysis for this publica
 
 3. **Summarize Performance Improvement**: finally, to compute figures describing the improvement (in MSE) of non-linear methods over the OLS baseline, we use the `./code/summarize_mse.py` code. See the code for documentation.
 
-***Note**: many of the plots in the manuscript have been re-arranged, re-labeled, or otherwise modified from their raw state in graphic design tools to be suitable for publication*.
+**Note**: many of the plots in the manuscript have been re-arranged, re-labeled, or otherwise modified from their raw state in graphic design tools to be suitable for publication*.
+
+<img align="right" src="https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/98/2014/09/07214238/W-Logo_Purple_RGB.png" height=50>
