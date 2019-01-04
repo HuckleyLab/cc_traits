@@ -15,4 +15,5 @@ Four datasets were used in this analysis, as follows:
 
 **Trait Descriptions**: Within each dataset folder find a `traits-desc-{dataset-name}.csv` file, which gives English trait descriptions to variable names where available. These `traits-desc` files are used in plotting (see `/code/0-Nonlinear-Trait-Modeling.ipynb`).
 
-<img align="right" src="https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/98/2014/09/07214238/W-Logo_Purple_RGB.png" height=50>
+---
+<img align="center" src="../huckleylab-footer.png">
