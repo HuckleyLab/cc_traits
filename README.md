@@ -1,8 +1,8 @@
-<center><h1> Improving range shift predictions: enhancing the power of traits </h1>
+<div align="center"><h1> Improving range shift predictions: enhancing the power of traits </h1>
 
 [Tony Cannistra](http://www.anthonycannistra.com) and [Lauren Buckley](http://faculty.washington.edu/lbuckley) at the University of Washington Department of Biology.
 
-</center>
+</div>
 
 
 
