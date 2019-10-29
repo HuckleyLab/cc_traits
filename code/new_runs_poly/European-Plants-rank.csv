@@ -1,0 +1,19 @@
+,OLS,Ridge,Kernel Ridge,Kernel Ridge,RF,SVR,mean
+TemperatureIndicator,8,4,0,0,3,6,3.5
+LifeStrategy_crs,3,2,1,1,15,4,4.333333333333333
+SeedReleaseHeight,6,5,3,3,0,16,5.5
+NutrientIndicator,11,8,4,4,7,1,5.833333333333333
+RelativeAbundance,15,10,6,6,1,0,6.333333333333333
+TerminalVelocity,9,6,10,10,4,2,6.833333333333333
+LifeSpan,12,13,2,2,2,14,7.5
+LifeStrategy_ccc,0,0,13,13,11,9,7.666666666666667
+LifeStrategy_rrs,1,1,12,12,12,11,8.166666666666666
+LifeStrategy_ccs,2,7,7,7,13,15,8.5
+RetInFurSheep,10,9,8,8,5,12,8.666666666666666
+LifeStrategy_css,7,3,9,9,16,8,8.666666666666666
+NoOfVegOffspings,17,15,5,5,6,7,9.166666666666666
+RetInFurCattle,13,11,11,11,8,3,9.5
+Dominance,14,12,16,16,10,5,12.166666666666666
+LifeStrategy_sss,4,16,14,14,17,13,13.0
+LifeStrategy_rss,5,14,15,15,14,17,13.333333333333334
+GutSurvival,16,17,17,17,9,10,14.333333333333334
